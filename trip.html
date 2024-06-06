@@ -8,7 +8,103 @@
 <body>
 
 <h1>Reisebuchungs-Formular</h1>
+  <form action="https://it.bzz.ch/demo/formdata/index.php" method="POST">
+    <fieldset>
+      <legend>Abflughafen</legend>
+      <label for="abflughafen">Abflughafen:</label>
+      <select name="abflughafen" id="abflughafen" required>
+        <optgroup label="Deutschland">
+          <option value="Berlin">Berlin</option>
+          <option value="Frankfurt">Frankfurt</option>
+        </optgroup>
+        <optgroup label="Österreich">
+          <option value="Wien">Wien</option>
+          <option value="Salzburg">Salzburg</option>
+        </optgroup>
+        <optgroup label="Italien">
+          <option value="Mailand">Mailand</option>
+          <option value="Rom">Rom</option>
+        </optgroup>
+        <optgroup label="Frankreich">
+          <option value="Paris">Paris</option>
+          <option value="Marseille">Marseille</option>
+        </optgroup>
+      </select>
+    </fieldset>
 
+    <fieldset>
+      <legend>Art der Unterkunft</legend>
+      <label><input type="radio" name="unterkunft" value="Hotel" required> Hotel</label><br>
+      <label><input type="radio" name="unterkunft" value="Ferienwohnung"> Ferienwohnung</label><br>
+      <label><input type="radio" name="unterkunft" value="Hostel"> Hostel</label><br>
+    </fieldset>
 
+    <fieldset>
+      <legend>Zusätzliche Dienstleistungen</legend>
+      <label><input type="checkbox" name="dienstleistungen[]" value="Reiseversicherung"> Reiseversicherung</label><br>
+      <label><input type="checkbox" name="dienstleistungen[]" value="Flughafentransfer"> Flughafentransfer</label><br>
+      <label><input type="checkbox" name="dienstleistungen[]" value="Zusätzliches Gepäck"> Zusätzliches Gepäck</label><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>Reisezeitraum</legend>
+      <label for="startdatum">Startdatum:</label>
+      <input type="date" id="startdatum" name="startdatum" required><br>
+      <label for="enddatum">Enddatum:</label>
+      <input type="date" id="enddatum" name="enddatum" required><br>
+      <label for="reisedauer">Reisedauer (in Tagen, max. 21):</label>
+      <input type="number" id="reisedauer" name="reisedauer" min="1" max="21" required><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>Anzahl der reisenden Personen</legend>
+      <label for="anzahl_personen">Anzahl der reisenden Personen:</label>
+      <input type="number" id="anzahl_personen" name="anzahl_personen" min="1" required><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>Bevorzugte Fluggesellschaft</legend>
+      <label for="fluggesellschaft">Bevorzugte Fluggesellschaft:</label>
+      <select id="fluggesellschaft" name="fluggesellschaft">
+        <option value="Swiss">Swiss</option>
+        <option value="Lufthansa">Lufthansa</option>
+        <option value="Austrian Airlines">Austrian Airlines</option>
+        <option value="EasyJet">EasyJet</option>
+      </select><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>Zusätzliche optionale Dienstleistungen</legend>
+      <label><input type="checkbox" name="optionale_dienstleistungen[]" value="Priority-Check-In"> Priority-Check-In</label><br>
+      <label><input type="checkbox" name="optionale_dienstleistungen[]" value="Zusätzliches Handgepäck"> Zusätzliches Handgepäck</label><br>
+      <label><input type="checkbox" name="optionale_dienstleistungen[]" value="Mietwagen"> Mietwagen</label><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>Reiseziel</legend>
+      <label for="reiseziel">Reiseziel:</label>
+      <input list="reiseziele" id="reiseziel" name="reiseziel">
+      <datalist id="reiseziele">
+        <option value="Barcelona">
+        <option value="Rom">
+        <option value="Paris">
+        <option value="New York">
+        <option value="Tokio">
+      </datalist><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>E-Mail-Adresse</legend>
+      <label for="email">E-Mail-Adresse:</label>
+      <input type="email" id="email" name="email" required><br>
+    </fieldset>
+
+    <button type="reset">Reset</button>
+    <button type="submit">Submit</button>
+  </form>
 </body>
 </html>
+
+
+
+
